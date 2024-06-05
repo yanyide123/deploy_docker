@@ -39,21 +39,22 @@ swin_transformer
 
 按照规则编写Dockerfile文件，将需要按章的包写到requirements.txt，最好指定版本
 
-编写好执行 docker build -t 镜像名：版本  .     docker build -t my_image .
+编写好执行 docker build -t 镜像名：版本  .    
+例如：docker build -t my_image:v1.0 .
 
 三、进入镜像测试
 
 1、启动镜像：
 
-docker run --gpus all --network="host" -it -p 8080:8080 --name sss swin_transformer:v1 /bin/bash
+例如：docker run --gpus all --network="host" -it -p 8080:8080 --name sss swin_transformer:v1 /bin/bash
 
 2、进入镜像
 
-docker exec -it sss /bin/bash
+例如：docker exec -it sss /bin/bash
 
 使用root用户进入镜像
 
-docker exec -u root -it sss /bin/bash
+例如：docker exec -u root -it sss /bin/bash
 
 3、启动服务测试
 
@@ -67,7 +68,7 @@ docker exec -u root -it sss /bin/bash
 
 docker save -o 保存的.tar文件名      镜像名：版本
 
-docker save -o my_image.tar my_image:latest
+例如：docker save -o my_image.tar my_image:latest
 
 
 
